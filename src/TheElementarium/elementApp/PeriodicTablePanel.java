@@ -75,12 +75,11 @@ public class PeriodicTablePanel extends JLayeredPane {
             @Override
 public void mouseEntered(MouseEvent e) {
     if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
-        btn.setBounds(
-            btn.getX() - 5,  // shift left slightly
-            btn.getY() - 5,  // shift up slightly
-            BLOCK_WIDTH + 10, // wider
-            BLOCK_HEIGHT + 10 // taller
-        );
+        int centerX = btn.getX() + btn.getWidth() / 2;
+        int centerY = btn.getY() + btn.getHeight() / 2;
+        int newWidth = BLOCK_WIDTH + 10;
+        int newHeight = BLOCK_HEIGHT + 10;
+        btn.setBounds(centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
         btn.setFont(new Font("Arial", Font.BOLD, 20));
         setComponentZOrder(btn, 1);
     }
@@ -92,15 +91,13 @@ public void mouseEntered(MouseEvent e) {
     }
 }
 
+
             @Override
 public void mouseExited(MouseEvent e) {
     if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
-        btn.setBounds(
-            btn.getX() + 5,
-            btn.getY() + 5,
-            BLOCK_WIDTH,
-            BLOCK_HEIGHT
-        );
+        int centerX = btn.getX() + btn.getWidth() / 2;
+        int centerY = btn.getY() + btn.getHeight() / 2;
+        btn.setBounds(centerX - BLOCK_WIDTH / 2, centerY - BLOCK_HEIGHT / 2, BLOCK_WIDTH, BLOCK_HEIGHT);
         btn.setFont(new Font("Arial", Font.BOLD, 16));
     }
 
@@ -116,18 +113,24 @@ public void mouseExited(MouseEvent e) {
         if (isPanelLocked && currentActiveSymbol.equals(symbol)) {
             isPanelLocked = false;
             detailPanel.setVisible(false);
-            btn.setSize(BLOCK_WIDTH, BLOCK_HEIGHT);
-            btn.setLocation(btn.getX() + 5, btn.getY() + 5);
+            int centerX = btn.getX() + btn.getWidth() / 2;
+            int centerY = btn.getY() + btn.getHeight() / 2;
+            btn.setBounds(centerX - BLOCK_WIDTH / 2, centerY - BLOCK_HEIGHT / 2, BLOCK_WIDTH, BLOCK_HEIGHT);
             btn.setFont(new Font("Arial", Font.BOLD, 16));
         } else {
             for (JButton otherBtn : frame.getElementButtons()) {
-                otherBtn.setSize(BLOCK_WIDTH, BLOCK_HEIGHT);
+                int cx = otherBtn.getX() + otherBtn.getWidth() / 2;
+                int cy = otherBtn.getY() + otherBtn.getHeight() / 2;
+                otherBtn.setBounds(cx - BLOCK_WIDTH / 2, cy - BLOCK_HEIGHT / 2, BLOCK_WIDTH, BLOCK_HEIGHT);
                 otherBtn.setFont(new Font("Arial", Font.BOLD, 16));
             }
             isPanelLocked = true;
             currentActiveSymbol = symbol;
-            btn.setSize(BLOCK_WIDTH + 10, BLOCK_HEIGHT + 10);
-            btn.setLocation(btn.getX() - 5, btn.getY() - 5);
+            int centerX = btn.getX() + btn.getWidth() / 2;
+            int centerY = btn.getY() + btn.getHeight() / 2;
+            int newWidth = BLOCK_WIDTH + 10;
+            int newHeight = BLOCK_HEIGHT + 10;
+            btn.setBounds(centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
             btn.setFont(new Font("Arial", Font.BOLD, 22));
             setComponentZOrder(btn, 1);
 
@@ -136,6 +139,7 @@ public void mouseExited(MouseEvent e) {
         }
     }
 });
+
 
         return btn;
     }
