@@ -73,59 +73,67 @@ public class PeriodicTablePanel extends JLayeredPane {
 
         btn.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseEntered(MouseEvent e) {
-                if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
-                    btn.setFont(new Font("Arial", Font.BOLD, 20));
-                    setComponentZOrder(btn, 1); 
-                    recalculateResponsiveGrid();
-                }
-                
-                if (isPanelLocked) return;
-                if (element != null) {
-                    currentActiveSymbol = symbol;
-                    positionDetailPanel(btn.getX(), btn.getY(), 260, 380);
-                    detailPanel.populateData(element);
-                }
-            }
+public void mouseEntered(MouseEvent e) {
+    if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
+        btn.setBounds(
+            btn.getX() - 5,  // shift left slightly
+            btn.getY() - 5,  // shift up slightly
+            BLOCK_WIDTH + 10, // wider
+            BLOCK_HEIGHT + 10 // taller
+        );
+        btn.setFont(new Font("Arial", Font.BOLD, 20));
+        setComponentZOrder(btn, 1);
+    }
+
+    if (!isPanelLocked && element != null) {
+        currentActiveSymbol = symbol;
+        positionDetailPanel(btn.getX(), btn.getY(), 260, 380);
+        detailPanel.populateData(element);
+    }
+}
 
             @Override
-            public void mouseExited(MouseEvent e) {
-                if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
-                    btn.setFont(new Font("Arial", Font.BOLD, 16));
-                    recalculateResponsiveGrid();
-                }
-                
-                if (!isPanelLocked) {
-                    detailPanel.setVisible(false);
-                    repaint();
-                }
-            }
+public void mouseExited(MouseEvent e) {
+    if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
+        btn.setBounds(
+            btn.getX() + 5,
+            btn.getY() + 5,
+            BLOCK_WIDTH,
+            BLOCK_HEIGHT
+        );
+        btn.setFont(new Font("Arial", Font.BOLD, 16));
+    }
+
+    if (!isPanelLocked) {
+        detailPanel.setVisible(false);
+        repaint();
+    }
+}
         });
 
         btn.addActionListener(e -> {
-            if (element != null) {
-                if (isPanelLocked && currentActiveSymbol.equals(symbol)) {
-                    isPanelLocked = false;
-                    detailPanel.setVisible(false);
-                    btn.setFont(new Font("Arial", Font.BOLD, 16));
-                    recalculateResponsiveGrid();
-                } else {
-                    for (JButton otherBtn : frame.getElementButtons()) {
-                        if (!otherBtn.getText().equals(symbol)) {
-                            otherBtn.setFont(new Font("Arial", Font.BOLD, 16));
-                        }
-                    }
-                    isPanelLocked = true;
-                    currentActiveSymbol = symbol;
-                    btn.setFont(new Font("Arial", Font.BOLD, 22));
-                    setComponentZOrder(btn, 1);
-                    
-                    recalculateResponsiveGrid();
-                    positionDetailPanel(btn.getX(), btn.getY(), 300, 400); 
-                    detailPanel.populateData(element);
-                }
+    if (element != null) {
+        if (isPanelLocked && currentActiveSymbol.equals(symbol)) {
+            isPanelLocked = false;
+            detailPanel.setVisible(false);
+            btn.setBounds(btn.getX() + 5, btn.getY() + 5, BLOCK_WIDTH, BLOCK_HEIGHT);
+            btn.setFont(new Font("Arial", Font.BOLD, 16));
+        } else {
+            for (JButton otherBtn : frame.getElementButtons()) {
+                otherBtn.setBounds(otherBtn.getX() + 5, otherBtn.getY() + 5, BLOCK_WIDTH, BLOCK_HEIGHT);
+                otherBtn.setFont(new Font("Arial", Font.BOLD, 16));
             }
-        });
+            isPanelLocked = true;
+            currentActiveSymbol = symbol;
+            btn.setBounds(btn.getX() - 5, btn.getY() - 5, BLOCK_WIDTH + 10, BLOCK_HEIGHT + 10);
+            btn.setFont(new Font("Arial", Font.BOLD, 22));
+            setComponentZOrder(btn, 1);
+
+            positionDetailPanel(btn.getX(), btn.getY(), 300, 400);
+            detailPanel.populateData(element);
+        }
+    }
+});
 
         return btn;
     }
