@@ -116,16 +116,18 @@ public void mouseExited(MouseEvent e) {
         if (isPanelLocked && currentActiveSymbol.equals(symbol)) {
             isPanelLocked = false;
             detailPanel.setVisible(false);
-            btn.setBounds(btn.getX() + 5, btn.getY() + 5, BLOCK_WIDTH, BLOCK_HEIGHT);
+            btn.setSize(BLOCK_WIDTH, BLOCK_HEIGHT);
+            btn.setLocation(btn.getX() + 5, btn.getY() + 5);
             btn.setFont(new Font("Arial", Font.BOLD, 16));
         } else {
             for (JButton otherBtn : frame.getElementButtons()) {
-                otherBtn.setBounds(otherBtn.getX() + 5, otherBtn.getY() + 5, BLOCK_WIDTH, BLOCK_HEIGHT);
+                otherBtn.setSize(BLOCK_WIDTH, BLOCK_HEIGHT);
                 otherBtn.setFont(new Font("Arial", Font.BOLD, 16));
             }
             isPanelLocked = true;
             currentActiveSymbol = symbol;
-            btn.setBounds(btn.getX() - 5, btn.getY() - 5, BLOCK_WIDTH + 10, BLOCK_HEIGHT + 10);
+            btn.setSize(BLOCK_WIDTH + 10, BLOCK_HEIGHT + 10);
+            btn.setLocation(btn.getX() - 5, btn.getY() - 5);
             btn.setFont(new Font("Arial", Font.BOLD, 22));
             setComponentZOrder(btn, 1);
 
