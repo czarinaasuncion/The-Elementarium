@@ -2,17 +2,11 @@ package TheElementarium.elementApp;
 
 import TheElementarium.elements.Element;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
-
+import javax.swing.border.TitledBorder;
 
 public class ElementGUI extends JFrame {
     private final Color DARK_BLUE = new Color(42, 70, 116);
@@ -23,6 +17,7 @@ public class ElementGUI extends JFrame {
 
     JLayeredPane centerPanel;
     private JPanel detailPanel;
+    private JPanel legendPanel;
     private JLabel lblImage, lblName, lblGroup;
     private JTextArea txtDetails, txtApp;
     private final List<JButton> elementButtons = new ArrayList<>();
@@ -63,10 +58,13 @@ public class ElementGUI extends JFrame {
     private void setupFrame() {
         setTitle("The Elementarium");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setMinimumSize(new Dimension(1200, 760));
+        setMinimumSize(new Dimension(1200, 850));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
     }
+
+    private JButton backBtn;
+    private JTextField searchField;
 
     private void setupHeader() {
         JPanel header = new JPanel(new BorderLayout());
@@ -74,20 +72,47 @@ public class ElementGUI extends JFrame {
         header.setPreferredSize(new Dimension(0, 70));
         header.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, HEADER_LINE));
 
-        JTextField searchField = new JTextField("Search Element", 15);
+        searchField = new JTextField("Search Element", 24); 
+        searchField.setFont(new Font("Arial", Font.PLAIN, 14));
         searchField.addFocusListener((FocusListener) new FocusAdapter() {
-    @Override
-    public void focusGained(FocusEvent e) {
-        if (searchField.getText().equals("Search Element")) {
-            searchField.setText("");
-        }
-    }
-});
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (searchField.getText().equals("Search Element")) {
+                    searchField.setText("");
+                }
+            }
+        });
+        
         JButton searchBtn = new JButton("Find");
+        searchBtn.setFocusPainted(false);
+        searchBtn.setBackground(new Color(173, 216, 230)); 
+        searchBtn.setForeground(DARK_BLUE);
+        searchBtn.setFont(new Font("Arial", Font.BOLD, 13));
+        searchBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         searchBtn.addActionListener(e -> performSearch(searchField.getText().trim()));
+
+        backBtn = new JButton("Back");
+        backBtn.setFocusPainted(false);
+        backBtn.setBackground(new Color(255, 204, 153)); 
+        backBtn.setForeground(DARK_BLUE);
+        backBtn.setFont(new Font("Arial", Font.BOLD, 13));
+        backBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        backBtn.setVisible(false); 
+        backBtn.addActionListener(e -> {
+            searchField.setText("Search Element");
+            backBtn.setVisible(false);
+            for (JButton btn : elementButtons) {
+                btn.setVisible(true);
+            }
+            if (!isPanelLocked) {
+                detailPanel.setVisible(false);
+            }
+            centerPanel.repaint();
+        });
 
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 18));
         searchPanel.setOpaque(false);
+        searchPanel.add(backBtn);
         searchPanel.add(searchField);
         searchPanel.add(searchBtn);
 
@@ -96,13 +121,13 @@ public class ElementGUI extends JFrame {
     }
 
     private void setupCenterPanel() {
-    // Use JLayeredPane instead of JPanel
     centerPanel = new JLayeredPane();
     centerPanel.setBackground(DARK_BLUE);
     centerPanel.setOpaque(true);
     add(centerPanel, BorderLayout.CENTER);
 
     setupDetailPanel();
+    setupLegendPanel();
 
     for (String[] data : elementData) {
         String symbol = data[0];
@@ -115,6 +140,7 @@ public class ElementGUI extends JFrame {
     }
 
     centerPanel.add(detailPanel, JLayeredPane.PALETTE_LAYER);
+    centerPanel.add(legendPanel, JLayeredPane.DEFAULT_LAYER);
 
     centerPanel.addComponentListener(new ComponentAdapter() {
         @Override
@@ -125,20 +151,74 @@ public class ElementGUI extends JFrame {
 }
     private Color getGroupColor(String group) {
     return switch (group) {
-        case "Alkali metals" -> new Color(255, 153, 153);       // pastel coral red
-        case "Alkaline earth metals" -> new Color(255, 204, 153); // pastel orange-peach
-        case "Transition metals" -> new Color(255, 255, 153);     // pastel yellow
-        case "Post-transition metals" -> new Color(153, 255, 204); // pastel turquoise
-        case "Metalloids" -> new Color(204, 153, 255);           // pastel violet-purple
-        case "Reactive nonmetals" -> new Color(255, 153, 204);   // pastel pink-rose
-        case "Halogens" -> new Color(255, 153, 255);             // pastel magenta-lavender
-        case "Noble gases" -> new Color(153, 255, 255);           // pastel cyan
-        case "Lanthanides" -> new Color(255, 204, 229);          // pastel blush pink
-        case "Actinides" -> new Color(255, 204, 178);            // pastel apricot
+        case "Alkali metals" -> new Color(255, 153, 153);       
+        case "Alkaline earth metals" -> new Color(255, 204, 153); 
+        case "Transition metals" -> new Color(255, 255, 153);     
+        case "Post-transition metals" -> new Color(153, 255, 204); 
+        case "Metalloids" -> new Color(204, 153, 255);           
+        case "Reactive nonmetals" -> new Color(255, 153, 204);   
+        case "Halogens" -> new Color(255, 153, 255);             
+        case "Noble gases" -> new Color(153, 255, 255);           
+        case "Lanthanides" -> new Color(255, 204, 229);          
+        case "Actinides" -> new Color(255, 204, 178);            
         default -> DEFAULT_PASTEL;
     };
 }
 
+    private void setupLegendPanel() {
+        legendPanel = new JPanel(new GridLayout(2, 5, 8, 6));
+        legendPanel.setOpaque(false);
+
+        TitledBorder border = BorderFactory.createTitledBorder(
+            BorderFactory.createLineBorder(HEADER_LINE, 1), "Element Groups Legend"
+        );
+        border.setTitleFont(new Font("Arial", Font.BOLD, 12));
+        border.setTitleColor(HEADER_LINE);
+        legendPanel.setBorder(border);
+
+        String[] groups = {
+            "Alkali metals", "Alkaline earth metals", "Transition metals", "Post-transition metals", "Metalloids",
+            "Reactive nonmetals", "Halogens", "Noble gases", "Lanthanides", "Actinides"
+        };
+
+        for (String group : groups) {
+            JPanel item = new JPanel(new GridBagLayout());
+            item.setOpaque(false);
+            GridBagConstraints gbc = new GridBagConstraints();
+
+            JPanel colorBox = new JPanel();
+            colorBox.setPreferredSize(new Dimension(14, 14));
+            colorBox.setMinimumSize(new Dimension(14, 14));
+            colorBox.setBackground(getGroupColor(group));
+            colorBox.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+
+            JTextArea labelArea = new JTextArea(group);
+            labelArea.setFont(new Font("Arial", Font.BOLD, 11));
+            labelArea.setForeground(Color.WHITE);
+            labelArea.setEditable(false);
+            labelArea.setFocusable(false);
+            labelArea.setOpaque(false);
+            labelArea.setLineWrap(true);
+            labelArea.setWrapStyleWord(true);
+            
+            labelArea.setSize(new Dimension(100, 30)); 
+
+            gbc.gridx = 0;
+            gbc.gridy = 0;
+            gbc.anchor = GridBagConstraints.WEST;
+            gbc.insets = new Insets(0, 4, 0, 6); 
+            item.add(colorBox, gbc);
+
+            gbc.gridx = 1;
+            gbc.weightx = 1.0;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            gbc.anchor = GridBagConstraints.WEST;
+            gbc.insets = new Insets(0, 0, 0, 2);
+            item.add(labelArea, gbc);
+
+            legendPanel.add(item);
+        }
+    }
 
     private void recalculateResponsiveGrid() {
         int panelWidth = centerPanel.getWidth();
@@ -166,6 +246,16 @@ public class ElementGUI extends JFrame {
             }
 
             btn.setBounds(x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
+        }
+
+        if (legendPanel != null) {
+            int legX = (int) (leftMargin + (5 - 1) * (BLOCK_WIDTH + hGap));
+            int legY = (int) (topMargin + (0.15 * (BLOCK_HEIGHT + vGap))); 
+            int legW = (int) ((10 - 4 + 1) * (BLOCK_WIDTH + hGap) - hGap) - 5;
+            int legH = (int) (2.5 * (BLOCK_HEIGHT + vGap)); 
+            legendPanel.setBounds(legX, legY, legW, legH);
+            
+            legendPanel.revalidate();
         }
         
         if (detailPanel != null && detailPanel.isVisible()) {
@@ -196,17 +286,32 @@ public class ElementGUI extends JFrame {
     btn.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseEntered(MouseEvent e) {
+            if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
+                btn.putClientProperty("currentWidth", BLOCK_WIDTH + 10);
+                btn.putClientProperty("currentHeight", BLOCK_HEIGHT + 12);
+                btn.setFont(new Font("Arial", Font.BOLD, 20));
+                centerPanel.setComponentZOrder(btn, 1); 
+                recalculateResponsiveGrid();
+            }
+            
             if (isPanelLocked) return;
             Element el = logic.findElement(symbol);
             if (el != null) {
                 currentActiveSymbol = symbol;
-                positionDetailPanel(btn.getX(), btn.getY(), 260, 380);
+                positionDetailPanel(btn.getX() - ((BLOCK_WIDTH + 10 - BLOCK_WIDTH)/2), btn.getY() - ((BLOCK_HEIGHT + 12 - BLOCK_HEIGHT)/2), 260, 380);
                 showElementDetails(el);
             }
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
+            if (!isPanelLocked || !currentActiveSymbol.equals(symbol)) {
+                btn.putClientProperty("currentWidth", BLOCK_WIDTH);
+                btn.putClientProperty("currentHeight", BLOCK_HEIGHT);
+                btn.setFont(new Font("Arial", Font.BOLD, 16));
+                recalculateResponsiveGrid();
+            }
+            
             if (!isPanelLocked) {
                 detailPanel.setVisible(false);
                 centerPanel.repaint();
@@ -219,11 +324,27 @@ public class ElementGUI extends JFrame {
             if (isPanelLocked && currentActiveSymbol.equals(symbol)) {
                 isPanelLocked = false;
                 detailPanel.setVisible(false);
-                centerPanel.repaint();
+                btn.putClientProperty("currentWidth", BLOCK_WIDTH);
+                btn.putClientProperty("currentHeight", BLOCK_HEIGHT);
+                btn.setFont(new Font("Arial", Font.BOLD, 16));
+                recalculateResponsiveGrid();
             } else {
+                for (JButton otherBtn : elementButtons) {
+                    if (!otherBtn.getText().equals(symbol)) {
+                        otherBtn.putClientProperty("currentWidth", BLOCK_WIDTH);
+                        otherBtn.putClientProperty("currentHeight", BLOCK_HEIGHT);
+                        otherBtn.setFont(new Font("Arial", Font.BOLD, 16));
+                    }
+                }
                 isPanelLocked = true;
                 currentActiveSymbol = symbol;
-                positionDetailPanel(btn.getX(), btn.getY(),300, 400); // bigger size
+                btn.putClientProperty("currentWidth", BLOCK_WIDTH + 18);
+                btn.putClientProperty("currentHeight", BLOCK_HEIGHT + 22);
+                btn.setFont(new Font("Arial", Font.BOLD, 22));
+                centerPanel.setComponentZOrder(btn, 1);
+                
+                recalculateResponsiveGrid();
+                positionDetailPanel(btn.getX(), btn.getY(), 300, 400); 
                 showElementDetails(element);
             }
         }
@@ -238,7 +359,7 @@ public class ElementGUI extends JFrame {
     detailPanel.setLayout(new BorderLayout(5, 5));
     Color baseColor = HEADER_LINE;
     detailPanel.setBackground(lightenColor(baseColor, 0.3));
-    detailPanel.setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
+    detailPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     detailPanel.setVisible(false);
 
     JPanel topContainer = new JPanel();
@@ -250,41 +371,41 @@ public class ElementGUI extends JFrame {
     lblImage.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
     lblName = new JLabel("Name", SwingConstants.CENTER);
-    lblName.setFont(new Font("Arial", Font.BOLD, 20));
+    lblName.setFont(new Font("Arial", Font.BOLD, 18));
     lblName.setForeground(DARK_BLUE);
     lblName.setAlignmentX(Component.CENTER_ALIGNMENT);
 
     lblGroup = new JLabel("Group Type", SwingConstants.CENTER);
-    lblGroup.setFont(new Font("Arial", Font.ITALIC, 14));
+    lblGroup.setFont(new Font("Arial", Font.ITALIC, 13));
     lblGroup.setForeground(Color.DARK_GRAY);
     lblGroup.setAlignmentX(Component.CENTER_ALIGNMENT);
 
     topContainer.add(lblImage);
-    topContainer.add(Box.createRigidArea(new Dimension(0, 10)));
+    topContainer.add(Box.createRigidArea(new Dimension(0, 6)));
     topContainer.add(lblName);
-    topContainer.add(Box.createRigidArea(new Dimension(0, 5)));
+    topContainer.add(Box.createRigidArea(new Dimension(0, 3)));
     topContainer.add(lblGroup);
 
     txtDetails = new JTextArea();
     txtDetails.setEditable(false);
     txtDetails.setLineWrap(true);
     txtDetails.setWrapStyleWord(true);
-    txtDetails.setFont(new Font("Arial", Font.PLAIN, 13));
+    txtDetails.setFont(new Font("Arial", Font.PLAIN, 12));
     txtDetails.setOpaque(false);
 
     txtApp = new JTextArea();
     txtApp.setEditable(false);
     txtApp.setLineWrap(true);
     txtApp.setWrapStyleWord(true);
-    txtApp.setFont(new Font("Arial", Font.PLAIN, 13));
+    txtApp.setFont(new Font("Arial", Font.PLAIN, 12));
     txtApp.setOpaque(false);
 
     JPanel textContainer = new JPanel();
     textContainer.setLayout(new BoxLayout(textContainer, BoxLayout.Y_AXIS));
     textContainer.setOpaque(false);
-    textContainer.add(Box.createRigidArea(new Dimension(0, 10)));
+    textContainer.add(Box.createRigidArea(new Dimension(0, 6)));
     textContainer.add(txtDetails);
-    textContainer.add(Box.createRigidArea(new Dimension(0, 10)));
+    textContainer.add(Box.createRigidArea(new Dimension(0, 8)));
     textContainer.add(txtApp);
 
     JScrollPane scrollPane = new JScrollPane(textContainer,
@@ -293,8 +414,6 @@ public class ElementGUI extends JFrame {
     scrollPane.setOpaque(false);
     scrollPane.getViewport().setOpaque(false);
     scrollPane.setBorder(null);
-    scrollPane.setPreferredSize(new Dimension(300, 200));
-
 
     detailPanel.add(topContainer, BorderLayout.NORTH);
     detailPanel.add(scrollPane, BorderLayout.CENTER);
@@ -303,12 +422,20 @@ public class ElementGUI extends JFrame {
 
     private void positionDetailPanel(int elementX, int elementY, int panelWidth, int panelHeight) {
         int panelX;
-        int spacing = 12;
+        int spacing = 16; // Margin spacing cushion gap width
+
+        int activeBtnWidth = BLOCK_WIDTH;
+        for (JButton btn : elementButtons) {
+            if (btn.getText().equals(currentActiveSymbol)) {
+                activeBtnWidth = btn.getWidth();
+                break;
+            }
+        }
 
         if (elementX > (centerPanel.getWidth() / 2)) {
             panelX = elementX - panelWidth - spacing;
         } else {
-            panelX = elementX + BLOCK_WIDTH + spacing;
+            panelX = elementX + activeBtnWidth + spacing; 
         }
 
         int panelY = elementY;
@@ -320,11 +447,19 @@ public class ElementGUI extends JFrame {
         detailPanel.setBounds(panelX, panelY, panelWidth, panelHeight);
         
         int imgWidth = panelWidth - 24;
-        int imgHeight = (int) (imgWidth * 0.45);
+        int imgHeight = (int) (imgWidth * 0.42);
         lblImage.setPreferredSize(new Dimension(imgWidth, imgHeight));
         lblImage.setMaximumSize(new Dimension(imgWidth, imgHeight));
         
+        // Fixed word-wrapping clipping boundary parameters
+        int maxTextWidth = panelWidth - 24;
+        txtDetails.setSize(maxTextWidth, 1);
+        txtApp.setSize(maxTextWidth, 1);
+        
         centerPanel.setComponentZOrder(detailPanel, 0);
+        
+        detailPanel.revalidate();
+        detailPanel.repaint();
         centerPanel.revalidate();
         centerPanel.repaint();
     }
@@ -353,6 +488,9 @@ public class ElementGUI extends JFrame {
         Element found = logic.findElement(query);
         for (JButton btn : elementButtons) {
             btn.setVisible(found == null || btn.getText().equalsIgnoreCase(found.getSymbol()));
+        }
+        if (backBtn != null) {
+            backBtn.setVisible(true);
         }
         centerPanel.repaint();
     }
