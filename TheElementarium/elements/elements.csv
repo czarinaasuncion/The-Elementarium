@@ -1,0 +1,119 @@
+Name,Symbol,AtomicNumber,AtomicWeight,Group,ElectronConfig,Applications
+Hydrogen,H,1,1.008,Reactive nonmetals,1s¹,Used as clean rocket fuel and in industrial ammonia production for fertilizers
+Helium,He,2,4.0026,Noble gases,1s²,Used to cool down superconducting magnets in MRI scanners and for inflating balloons
+Lithium,Li,3,6.94,Alkali metals,[He] 2s¹,Crucial for manufacturing rechargeable batteries used in smartphones and electric vehicles
+Beryllium,Be,4,9.0122,Alkaline earth metals,[He] 2s²,Used as lightweight structural components in aerospace craft satellites and X-ray tube windows
+Boron,B,5,10.81,Metalloids,[He] 2s² 2p¹,Widely used in making heat-resistant borosilicate glass (like Pyrex) and industrial fiberglass
+Carbon,C,6,12.011,Reactive nonmetals,[He] 2s² 2p²,Serves as the structural backbone for fossil fuels plastics and high-strength carbon-fiber materials
+Nitrogen,N,7,14.007,Reactive nonmetals,[He] 2s² 2p³,Used as a liquid refrigerant for rapid freezing and to provide inert atmospheres in food packaging
+Oxygen,O,8,15.999,Reactive nonmetals,[He] 2s² 2p⁴,Vital for medical respiration support oxy-acetylene welding and rocket propulsion oxidizers
+Fluorine,F,9,18.998,Halogens,[He] 2s² 2p⁵,Added to municipal drinking water and toothpaste to aid in the prevention of dental cavities
+Neon,Ne,10,20.18,Noble gases,[He] 2s² 2p⁶,Extensively used in bright orange-red glow advertising signs and high-voltage electrical indicators
+Sodium,Na,11,22.99,Alkali metals,[Ne] 3s¹,Commonly used as a flavor enhancer and preservative in table salt and as a coolant in nuclear reactors
+Magnesium,Mg,12,24.305,Alkaline earth metals,[Ne] 3s²,Alloyed with aluminum to construct lightweight auto parts laptops and bright emergency flares
+Aluminum,Al,13,26.982,Post-transition metals,[Ne] 3s² 3p¹,Extensively used for making beverage cans foil wrap window frames and airplane fuselages
+Silicon,Si,14,28.085,Metalloids,[Ne] 3s² 3p²,The foundational semiconductor element used to manufacture computer chips and solar cells
+Phosphorus,P,15,30.974,Reactive nonmetals,[Ne] 3s² 3p³,Crucial component in commercial agricultural fertilizers safety matches and pyrotechnics
+Sulfur,S,16,32.06,Reactive nonmetals,[Ne] 3s² 3p⁴,Primarily used to manufacture sulfuric acid vulcanize rubber tires and formulate gunpowder
+Chlorine,Cl,17,35.45,Halogens,[Ne] 3s² 3p⁵,Widely used as a disinfectant to purify swimming pools and sanitize municipal drinking water
+Argon,Ar,18,39.948,Noble gases,[Ne] 3s² 3p⁶,Provides an unreactive shield gas during high-temperature industrial welding and fills incandescent lightbulbs
+Potassium,K,19,39.098,Alkali metals,[Ar] 4s¹,Essential electrolyte used in medical IV fluids and a key ingredient in chemical fertilizers
+Calcium,Ca,20,40.078,Alkaline earth metals,[Ar] 4s²,Widely used as a structural stabilizer in cement plaster and crucial for dietary health supplements
+Scandium,Sc,21,44.956,Transition metals,[Ar] 3d¹ 4s²,Alloyed with aluminum to construct high-performance bicycle frames and aerospace structural components
+Titanium,Ti,22,47.867,Transition metals,[Ar] 3d² 4s²,Highly valued for manufacturing biocompatible medical implants joint replacements and military aircraft hulls
+Vanadium,V,23,50.942,Transition metals,[Ar] 3d³ 4s²,Mainly utilized to forge ultra-strong steel alloys for industrial tools crankshafts and armor plating
+Chromium,Cr,24,51.996,Transition metals,[Ar] 3d⁵ 4s¹,Applied as a glossy protective coating via electroplating and a core element in stainless steel production
+Manganese,Mn,25,54.938,Transition metals,[Ar] 3d⁵ 4s²,Essential for deoxidizing and strengthening industrial steel used in railway tracks and heavy machinery
+Iron,Fe,26,55.845,Transition metals,[Ar] 3d⁶ 4s²,The primary component used to manufacture structural steel beams for bridges skyscrapers and automotive bodies
+Cobalt,Co,27,58.933,Transition metals,[Ar] 3d⁷ 4s²,Crucial raw material for producing high-capacity lithium-ion battery cathodes and powerful permanent magnets
+Nickel,Ni,28,58.693,Transition metals,[Ar] 3d⁸ 4s²,Widely used in coinage alloys stainless steel production and corrosion-resistant plating
+Copper,Cu,29,63.546,Transition metals,[Ar] 3d¹⁰ 4s¹,Excellently conducts electricity; utilized globally for electrical wiring telecommunication cables and plumbing pipes
+Zinc,Zn,30,65.38,Transition metals,[Ar] 3d¹⁰ 4s²,Primarily utilized to galvanize steel to prevent rusting and as an alloy ingredient in brass hardware
+Gallium,Ga,31,69.723,Post-transition metals,[Ar] 3d¹⁰ 4s² 4p¹,Used to manufacture high-frequency gallium arsenide semiconductors for smartphones and Blu-ray laser systems
+Germanium,Ge,32,72.63,Metalloids,[Ar] 3d¹⁰ 4s² 4p²,Essential component in wide-angle fiber optic communication systems and infrared night-vision optics lenses
+Arsenic,As,33,74.922,Metalloids,[Ar] 3d¹⁰ 4s² 4p³,Utilized as a specialized doping agent in semiconductor electronics and historically in wood preservatives
+Selenium,Se,34,78.971,Reactive nonmetals,[Ar] 3d¹⁰ 4s² 4p⁴,Crucial component in photocopying machines solar cells and light-sensitive digital lux meters
+Bromine,Br,35,79.904,Halogens,[Ar] 3d¹⁰ 4s² 4p⁵,Formulated into powerful industrial flame retardants water treatment chemicals and photographic film emulsions
+Krypton,Kr,36,83.798,Noble gases,[Ar] 3d¹⁰ 4s² 4p⁶,Filled into high-efficiency commercial energy bulbs and professional high-speed airport runway flashers
+Rubidium,Rb,37,85.468,Alkali metals,[Kr] 5s¹,Used as a highly precise timing standard in atomic clocks and to manufacture specialized purple glass
+Strontium,Sr,38,87.62,Alkaline earth metals,[Kr] 5s²,Formulated into chemical pyrotechnics to produce brilliant deep red colors in emergency flares and fireworks
+Yttrium,Y,39,88.906,Transition metals,[Kr] 4d¹ 5s²,Used to produce red phosphors for vintage television displays and as an enhancer in radar microwave filters
+Zirconium,Zr,40,91.224,Transition metals,[Kr] 4d² 5s²,Extensively used to fabricate corrosion-resistant cladding tubes for nuclear reactor fuel rods and lab crucibles
+Niobium,Nb,41,92.906,Transition metals,[Kr] 4d⁴ 5s¹,Alloyed into advanced superconducting magnets for MRI scanners and high-performance jet engine turbine blades
+Molybdenum,Mo,42,95.95,Transition metals,[Kr] 4d⁵ 5s¹,Added to structural steel alloys to withstand extreme high-temperature environments like engine pistons and boilers
+Technetium,Tc,43,98,Transition metals,[Kr] 4d⁵ 5s²,The first artificially synthesized element; its isotope Tc-99m is widely used as a medical radioactive tracer
+Ruthenium,Ru,44,101.07,Transition metals,[Kr] 4d⁷ 5s¹,Applied as a wear-resistant electrical contact coating and as an effective chemical catalyst in solar cells
+Rhodium,Rh,45,102.91,Transition metals,[Kr] 4d⁸ 5s¹,Highly prized coating for automotive catalytic converters to minimize dangerous exhaust gas emissions
+Palladium,Pd,46,106.42,Transition metals,[Kr] 4d¹⁰,Extensively used in fuel cell hydrogen purification systems dental crowns and luxury jewelry plating
+Silver,Ag,47,107.87,Transition metals,[Kr] 4d¹⁰ 5s¹,Has the highest thermal and electrical conductivity; used in premium solar panel tracks and fine jewelry
+Cadmium,Cd,48,112.41,Transition metals,[Kr] 4d¹⁰ 5s²,Historically used in industrial rechargeable NiCad batteries and anti-corrosive electroplating barriers
+Indium,In,49,114.82,Post-transition metals,[Kr] 4d¹⁰ 5s² 5p¹,Combined to create Indium Tin Oxide (ITO) an essential transparent conductive layer for touchscreen monitors
+Tin,Sn,50,118.71,Post-transition metals,[Kr] 4d¹⁰ 5s² 5p²,Widely melted down as an essential component in electronics circuit solder and anti-corrosive tin cans
+Antimony,Sb,51,121.76,Metalloids,[Kr] 4d¹⁰ 5s² 5p³,Used as a hardening agent in lead-acid automotive batteries and formulated into heavy-duty flame retardants
+Tellurium,Te,52,127.6,Metalloids,[Kr] 4d¹⁰ 5s² 5p⁴,Alloyed with copper to improve industrial machinability and used to construct cadmium-telluride solar arrays
+Iodine,I,53,126.9,Halogens,[Kr] 4d¹⁰ 5s² 5p⁵,Formulated into liquid medical antiseptics to sanitize skin wounds and added to table salt to prevent goiters
+Xenon,Xe,54,131.29,Noble gases,[Kr] 4d¹⁰ 5s² 5p⁶,Filled into ultra-bright specialized movie projector bulbs high-intensity car headlights and deep space ion thrusters
+Cesium,Cs,55,132.91,Alkali metals,[Xe] 6s¹,Serves as the ultimate global operational definition standard for calculating the absolute length of one second in atomic clocks
+Barium,Ba,56,137.33,Alkaline earth metals,[Xe] 6s²,Ingested as a specialized liquid dense contrast agent for diagnostic X-ray imaging of the gastrointestinal tract
+Lanthanum,La,57,138.91,Lanthanides,[Xe] 5d¹ 6s²,Used to manufacture heavy camera lenses night-vision optical components and hydrogen sponge storage alloys
+Cerium,Ce,58,140.12,Lanthanides,[Xe] 4f¹ 5d¹ 6s²,Acts as a polishing agent for industrial glass screens and used to fabricate mischmetal flints for lighters
+Praseodymium,Pr,59,140.91,Lanthanides,[Xe] 4f³ 6s²,Alloyed with magnesium to form high-strength metals for aircraft engines and used in yellow welder goggles
+Neodymium,Nd,60,144.24,Lanthanides,[Xe] 4f⁴ 6s²,Combined to manufacture the strongest known permanent magnets used in electric vehicle motors and hard drives
+Promethium,Pm,61,145,Lanthanides,[Xe] 4f⁵ 6s²,Completely synthetic and radioactive; historically used to supply light to glowing watch dials and guided missile gauges
+Samarium,Sm,62,150.36,Lanthanides,[Xe] 4f⁶ 6s²,Combined with cobalt to create robust magnets that resist demagnetization at incredibly high operating temperatures
+Europium,Eu,63,151.96,Lanthanides,[Xe] 4f⁷ 6s²,Serves as a vital red and blue phosphor agent inside modern TV monitors and used as an anti-counterfeit dye in bank notes
+Gadolinium,Gd,64,157.25,Lanthanides,[Xe] 4f⁷ 5d¹ 6s²,Injected intravenously as an essential intravenous contrast medium to enhance diagnostic MRI scans
+Terbium,Tb,65,158.93,Lanthanides,[Xe] 4f⁹ 6s²,Used as an efficient green phosphor inside fluorescent tube lights and integrated into magnetostrictive sonar systems
+Dysprosium,Dy,66,162.5,Lanthanides,[Xe] 4f¹⁰ 6s²,Added into neodymium permanent motor magnets to maintain high magnetic integrity at extreme running temperatures
+Holmium,Ho,67,164.93,Lanthanides,[Xe] 4f¹¹ 6s²,Possesses the highest magnetic strength of any element; used to concentrate flux fields inside industrial pole pieces
+Erbium,Er,68,167.26,Lanthanides,[Xe] 4f¹² 6s²,Used as a crucial signal laser amplifier inside fiber optic transoceanic telecommunications data cables
+Thulium,Tm,69,168.93,Lanthanides,[Xe] 4f¹³ 6s²,Utilized as a portable radioactive X-ray emission source for remote field medical operations and dental checks
+Ytterbium,Yb,70,173.05,Lanthanides,[Xe] 4f¹⁴ 6s²,Used to construct ultra-precise atomic clocks and alloyed into stainless steel to refine overall structural grain consistency
+Lutetium,Lu,71,174.97,Lanthanides,[Xe] 4f¹⁴ 5d¹ 6s²,Its high-density silicate compound is an essential component inside advanced Positron Emission Tomography (PET) scanners
+Hafnium,Hf,72,178.49,Transition metals,[Xe] 4f¹⁴ 5d² 6s²,Excellent neutron absorber utilized to build high-durability control rods inside nuclear submarine reactors
+Tantalum,Ta,73,180.95,Transition metals,[Xe] 4f¹⁴ 5d³ 6s²,Highly resistant to corrosion; used to engineer miniaturized capacitors for smartphones and electronic circuit boards
+Tungsten,W,74,183.84,Transition metals,[Xe] 4f¹⁴ 5d⁴ 6s²,Boasts the highest melting point of any metal; used for lightbulb filaments armor-piercing shells and TIG welding tips
+Rhenium,Re,75,186.21,Transition metals,[Xe] 4f¹⁴ 5d⁵ 6s²,Alloyed into nickel-based superalloys to construct single-crystal combustion blades for commercial jet engines
+Osmium,Os,76,190.23,Transition metals,[Xe] 4f¹⁴ 5d⁶ 6s²,The densest natural element; alloyed into heavy-duty electrical contacts fountain pen tips and record player needles
+Iridium,Ir,77,192.22,Transition metals,[Xe] 4f¹⁴ 5d⁷ 6s²,Incredibly corrosion resistant; used to manufacture heavy spark plugs for aircraft and deep crucibles for laser crystals
+Platinum,Pt,78,195.08,Transition metals,[Xe] 4f¹⁴ 5d⁹ 6s¹,Extensively utilized as a highly active catalyst inside automotive emission converters and in cancer treatment medications
+Gold,Au,79,196.97,Transition metals,[Xe] 4f¹⁴ 5d¹⁰ 6s¹,Highly unreactive and malleable; used globally as a reliable financial currency backing for jewelry and electrical contacts
+Mercury,Hg,80,200.59,Transition metals,[Xe] 4f¹⁴ 5d¹⁰ 6s²,The only liquid metal at room temperature; historically utilized inside physical thermometers barometers and silent tilt switches
+Thallium,Tl,81,204.38,Post-transition metals,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹,Historically mixed into deadly rodent poisons; today used inside specialty infrared optical lenses and medical heart scans
+Lead,Pb,82,207.2,Post-transition metals,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²,Extensively used to manufacture heavy-duty automotive batteries and layered as heavy radiation safety shields in X-ray rooms
+Bismuth,Bi,83,208.98,Post-transition metals,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³,The active soothing component in pink Pepto-Bismol medicine and used as an eco-friendly lead replacement in plumbing solder
+Polonium,Po,84,209,Metalloids,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴,Intensely radioactive alpha emitter; historically utilized to eliminate static electricity buildup on industrial photographic brushes
+Astatine,At,85,210,Halogens,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵,The rarest naturally occurring element on earth; actively being evaluated for highly targeted alpha-particle tumor therapies
+Radon,Rn,86,222,Noble gases,[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶,Naturally radioactive gas monitored globally for basements and historically used to track outdoor air masses
+Francium,Fr,87,223,Alkali metals,[Rn] 7s¹,Highly unstable alkali metal with an extremely brief lifespan; utilized solely for basic laboratory research on nuclear structures
+Radium,Ra,88,226,Alkaline earth metals,[Rn] 7s²,Discovered by Marie Curie; historically used for glow-in-the-dark watch paint and early cancer radiation treatments
+Actinium,Ac,89,227,Actinides,[Rn] 6d¹ 7s²,Strong radioactive glow source explored as a powerful candidate for targeted alpha immunotherapy cancer treatments
+Thorium,Th,90,232.04,Actinides,[Rn] 6d² 7s²,Investigated globally as a significantly safer and cleaner alternative fuel source for building nuclear power reactors
+Protactinium,Pa,91,231.04,Actinides,[Rn] 5f² 6d¹ 7s²,Highly toxic and rare radioactive metal; used exclusively for analyzing structural models in nuclear geological dating
+Uranium,U,92,238.03,Actinides,[Rn] 5f³ 6d¹ 7s²,Fissionable isotope U-235 is the primary energy fuel source utilized inside global nuclear power plants and submarines
+Neptunium,Np,93,237,Actinides,[Rn] 5f⁴ 6d¹ 7s²,Synthesized byproduct generated inside commercial reactors; utilized to construct advanced neutron detection instruments
+Plutonium,Pu,94,244,Actinides,[Rn] 5f⁶ 7s²,Its isotope Pu-238 generates heat used in thermoelectric generators to power deep-space probes like Voyager and Mars rovers
+Americium,Am,95,243,Actinides,[Rn] 5f⁷ 7s²,Emits localized alpha radiation utilized inside residential ionization smoke detectors to identify active indoor fires
+Curium,Cm,96,247,Actinides,[Rn] 5f⁷ 6d¹ 7s²,Alpha particle emitter used on space missions as the dedicated particle source for Alpha Particle X-ray Spectrometers
+Berkelium,Bk,97,247,Actinides,[Rn] 5f⁹ 7s²,A rare synthetic transuranic element utilized strictly as a foundational target isotope to synthesize heavier superheavy elements
+Californium,Cf,98,251,Actinides,[Rn] 5f¹⁰ 7s²,Potent neutron emitter used to safely initiate nuclear start-up reactors and to detect moisture levels in soil profiles
+Einsteinium,Es,99,252,Actinides,[Rn] 5f¹¹ 7s²,Named in honor of Albert Einstein; produced in tiny quantities solely to analyze chemical properties of heavy actinide groups
+Fermium,Fm,100,257,Actinides,[Rn] 5f¹² 7s²,Formed via heavy neutron bombardment of lighter elements; restricted entirely to academic laboratory studies on atomic structures
+Mendelevium,Md,101,258,Actinides,[Rn] 5f¹³ 7s²,Named after Dmitri Mendeleev; synthesized in particle colliders purely to track structural nuclear alpha decay paths
+Nobelium,No,102,259,Actinides,[Rn] 5f¹⁴ 7s²,Named after Alfred Nobel; synthetic radioactive metal generated in ion beams solely for nuclear verification physics
+Lawrencium,Lr,103,266,Actinides,[Rn] 5f¹⁴ 7s² 7p¹,Discovered at Berkeley Laboratory; used solely to investigate relativistic effects on chemical properties of actinide lines
+Rutherfordium,Rf,104,267,Transition metals,[Rn] 5f¹⁴ 6d² 7s²,Superheavy synthetic transactinide element with an extremely short lifespan; restricted entirely to heavy ion physics research
+Dubnium,Db,105,268,Transition metals,[Rn] 5f¹⁴ 6d³ 7s²,Artificially generated element named after Dubnia Russia; used exclusively for academic confirmation of transactinide patterns
+Seaborgium,Sg,106,269,Transition metals,[Rn] 5f¹⁴ 6d⁴ 7s²,Synthesized via nuclear fusion bombardment; evaluated strictly to observe decay dynamics in heavy atoms
+Bohrium,Bh,107,270,Transition metals,[Rn] 5f¹⁴ 6d⁵ 7s²,Named after physicist Niels Bohr; created artificially to measure the chemical behaviors of highly unstable transition groups
+Hassium,Hs,108,269,Transition metals,[Rn] 5f¹⁴ 6d⁶ 7s²,Superheavy synthetic element with a highly brief half-life; evaluated solely for chemical mapping of Group 8 properties
+Meitnerium,Mt,109,278,Transition metals,[Rn] 5f¹⁴ 6d⁷ 7s²,Named after physicist Lise Meitner; generated in minute amounts via heavy particle beams purely for atomic research
+Darmstadtium,Ds,110,281,Transition metals,[Rn] 5f¹⁴ 6d⁸ 7s²,Synthesized in Darmstadt Germany; used strictly to test theoretical nuclear shell stability models in physics
+Roentgenium,Rg,111,282,Transition metals,[Rn] 5f¹⁴ 6d⁹ 7s²,Superheavy synthetic element with a half-life of mere seconds; evaluated solely for theoretical physics mapping
+Copernium,Cn,112,285,Transition metals,[Rn] 5f¹⁴ 6d¹⁰ 7s²,Created via advanced heavy-ion fusion; utilized solely to confirm relativistic effects on outermost electrons
+Nihonium,Nh,113,286,Post-transition metals,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹,Synthesized and discovered in Japan; serves purely as a milestone marker in exploring superheavy atoms
+Flerovium,Fl,114,289,Post-transition metals,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²,Created to study structural nuclear stability near the hypothetical island of stability in physics
+Moscovium,Mc,115,290,Post-transition metals,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³,Artificially generated element with a brief lifespan; restricted entirely to heavy element verification science
+Livermorium,Lv,116,293,Post-transition metals,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴,Produced by colliding calcium ions into curium targets; evaluated strictly for heavy decay chain tracing
+Tennessine,Ts,117,294,Halogens,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵,A superheavy synthetic halogen discovered via joint Russian-American collaboration; restricted to basic nuclear research
+Oganesson,Og,118,294,Noble gases,[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶,The heaviest known element in existence; generated in extreme conditions purely to explore the upper limits of the periodic table
