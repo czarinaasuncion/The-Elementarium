@@ -57,7 +57,7 @@ public class ElementLab extends JPanel {
         topHubPanel.add(titleLabel, gbc);
 
         formulaDisplayLabel = new JLabel("Select 2 or 3 elements to begin...", SwingConstants.CENTER);
-        formulaDisplayLabel.setFont(new Font("Monospaced", Font.BOLD, 22));
+        formulaDisplayLabel.setFont(new Font("Monospaced", Font.BOLD, 20));
         formulaDisplayLabel.setForeground(ElementGUI.LEMON_CHIFFON);
         formulaDisplayLabel.setBackground(new Color(5, 28, 51)); 
         formulaDisplayLabel.setOpaque(true);
