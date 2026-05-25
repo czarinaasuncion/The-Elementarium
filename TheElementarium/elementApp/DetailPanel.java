@@ -118,14 +118,22 @@ public class DetailPanel extends JPanel { //may word na extends to indicate na m
         add(topContainer, BorderLayout.NORTH); //north - sa taas sha ng detail panel
         add(scrollPane, BorderLayout.CENTER);} //center - gitna ng detail panel
 
-    @SuppressWarnings("UseSpecificCatch")
-    public void populateData(Element element) {
-        lblName.setText(element.getSymbol() + " - " + element.getName());
-        lblGroup.setText(element.getGroup());
+    //eto logic for UI
+    @SuppressWarnings("UseSpecificCatch") //para macatch ng compiler specific error if meron, @suprress warning since di siya magwawarn na may error
+    public void populateData(Element element) { //pag may clinick ka sa periodic table, nagrurun tong method para ma update yung view
+        lblName.setText(element.getSymbol() + " - " + element.getName()); //ex. H - Hydrogen, ganto lilitaw sa detail panel
+        lblGroup.setText(element.getGroup()); //lilitaw group name ng element
 
-        txtDetails.setText(String.format("• Atomic Number: %d\n• Atomic Mass: %.3f u\n• Configuration: %s", element.getAtomicNumber(), element.getAtomicWeight(), element.getElectronConfig()));
-        txtApp.setText("Applications:\n" + element.getApplications());
+        txtDetails.setText(String.format("• Atomic Number: %d\n• Atomic Mass: %.3f u\n• Configuration: %s", element.getAtomicNumber(), element.getAtomicWeight(), element.getElectronConfig())); //pang spacing yung %d, next line naman \n, lilitaw dito yung element details
+        txtApp.setText("Applications:\n" + element.getApplications()); //under ng element details, lilitaw naman applications
 
+        //ginagamit try-catch block for image loading
+        //try - tatry hanapin yung image file sa project structure mo based sa binigay na source/path
+        //catch - eto lilitaw pag di nagload image
+        //under ni try, may if else
+        //if - pag nahanap image file, mareread sha and maassign sa currentGroupImage
+        //else - pag di nahanap yung image
+        //gingagamit to just in case mabura yung file or magka error sa image file
         try {
             String imageName = element.getGroupImageName();
             URL imgURL = getClass().getResource("/TheElementarium/elements/elementGraphics/" + imageName);
@@ -140,11 +148,13 @@ public class DetailPanel extends JPanel { //may word na extends to indicate na m
             currentGroupImage = null;
         }
 
-        Color baseColor = element.getGroupColor();
-        setBackground(ElementGUI.lightenColor(baseColor, 0.5));
-        setVisible(true);
-        revalidate();
-        repaint();
+        Color baseColor = element.getGroupColor(); //kukunin baseColor ng detail panel through yung getter (to see group color, see Element.java)
+        setBackground(ElementGUI.lightenColor(baseColor, 0.5)); //eto yung bg ng detail panel (lightened color ng groupcolor, see ElementGUI.java)
+        setVisible(true); //true, para makita sha bes
+        revalidate(); //Swing command te, inuutusan niya layout manager na irecalculate yung sizes if may changes sa size
+        //nilagay to since maraming changes sa sizes simula pa nung pinaka raw code niya
+        //inuupdate din niya yung UI hierarchy
+        repaint(); //command din te, pero eto naman uutusan na mag redraw yung components in case n may bagong data, same reason din kay revalidate on why andito sha
     }
 
     public void updateLayout(int panelWidth) {
