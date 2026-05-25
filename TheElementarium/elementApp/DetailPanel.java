@@ -1,25 +1,34 @@
+//eto yung detail panel
+//eto yung lumilitaw pag naka hover sa element block
+
 package TheElementarium.elementApp;
 
-import TheElementarium.elements.Element;
-import java.awt.*;
-import java.net.URL;
-import javax.imageio.ImageIO;
-import javax.swing.*;
+//imports
+import TheElementarium.elements.Element; //need to import since dito kukuha ng element info, see Element.java
+import java.awt.*; //abstract window toolkit, for GUI to, meron siyang classes and methods na for GUI
+import java.net.URL; //for handling image
+import javax.imageio.ImageIO; //for handling image, para maload yung image from the other files ng project
+import javax.swing.*; //awt is heavy-weight, eto naman lightweight. kung awt platform-dependent, eto independent. eto yung ginagamit for buttons and scrollbar
 
-public class DetailPanel extends JPanel {
-    private JLabel lblImage, lblName, lblGroup;
-    private JTextArea txtDetails, txtApp;
-    private Image currentGroupImage;
+public class DetailPanel extends JPanel { //may word na extends to indicate na magiinherit siya sa JPanel, ibig sabihin, pede siya maghold ng iba pang UI elements.
+    //ang JPanel ay part ng Java Swing and ginagamit to as container for a group of components.
+    //for example, dito sa program naten, ang JPanel for detailpanel nagcocontain ng element details & applications
 
-    public DetailPanel() {
-        setLayout(new BorderLayout(5, 5));
-        setBackground(ElementGUI.lightenColor(ElementGUI.HEADER_LINE, 0.3));
-        setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
-        setVisible(false);
-        initComponents();}
+    //initialization ng mga gagamitin na Java Swing components
+    //gumamit dito ng encaps since may keyword na private, meaning, yung mga to dito lang sa class na to magagamit
+    private JLabel lblImage, lblName, lblGroup; //JLabel- object that can contain either text or image
+    private JTextArea txtDetails, txtApp; //JTextArea, mostly textual paragraph dito
+    private Image currentGroupImage; //eto yung image na lilitaw sa detail panel
 
-    private void initComponents() {
-        JPanel topContainer = new JPanel();
+    public DetailPanel() { //constructor
+        setLayout(new BorderLayout(5, 5)); //may ganito para maayos and iisang size yung panel, 5 pixel gap sa x and y niya
+        setBackground(ElementGUI.lightenColor(ElementGUI.HEADER_LINE, 0.3)); //sinet dito yung bg color for detail panel using a helper method na galing sa ElementGUI (see ElementGUI.java) to see
+        setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12)); //may invisible border here para magstay ung components sa loob ng panel
+        setVisible(false); //pag sinet mo to ng true, lilitaw yung detailpanel kahit di pindutin or hover yung element block, kaya naka false ito para invisible muna sha then saka siya lilitaw
+        initComponents();} //call helper method to for UI hierarchy, kumbaga parang sa canva, nakalayer yung graphic elemnts para di lumitaw sa unahan yung dapat nasa likuran
+
+    private void initComponents() { //initializations for UI
+        JPanel topContainer = new JPanel(); 
         topContainer.setLayout(new BoxLayout(topContainer, BoxLayout.Y_AXIS));
         topContainer.setOpaque(false);
 
