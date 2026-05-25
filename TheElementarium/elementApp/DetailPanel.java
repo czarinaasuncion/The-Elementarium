@@ -157,14 +157,16 @@ public class DetailPanel extends JPanel { //may word na extends to indicate na m
         repaint(); //command din te, pero eto naman uutusan na mag redraw yung components in case n may bagong data, same reason din kay revalidate on why andito sha
     }
 
-    public void updateLayout(int panelWidth) {
-        int contentPadding = 24;
-        int maxTextWidth = panelWidth - contentPadding;
-        int imgWidth = maxTextWidth;
-        int imgHeight = (int) (imgWidth * 0.42);
-        lblImage.setPreferredSize(new Dimension(imgWidth, imgHeight));
-        lblImage.setMaximumSize(new Dimension(imgWidth, imgHeight));
-        
+    public void updateLayout(int panelWidth) { //responsive design tong method be
+        //ginagamit to para if ever na gusto iresize ng user yung window (minimize kunyare) yung mga components ng detail panel magaadjust sila
+        int contentPadding = 24; //spacing lang bes
+        int maxTextWidth = panelWidth - contentPadding; //eto para di lumagpas text sa labas ng panel
+        int imgWidth = maxTextWidth; //para kasize ng image yung width ng text, mas mukang maayos
+        int imgHeight = (int) (imgWidth * 0.42); //heignt ng image
+        lblImage.setPreferredSize(new Dimension(imgWidth, imgHeight)); //eto size ng image pag naka default yung window
+        lblImage.setMaximumSize(new Dimension(imgWidth, imgHeight)); //size ng image pag nakafullscreen, wala naman din pinagbago since default ng window sa periodic table ay fullscreen
+
+        //basta sizes lang to guys para di lang yung container ng texts yung nagresize, dapat yung texts din
         txtDetails.setSize(maxTextWidth, Short.MAX_VALUE);
         txtApp.setSize(maxTextWidth, Short.MAX_VALUE);
         txtDetails.setPreferredSize(new Dimension(maxTextWidth, txtDetails.getUI().getPreferredSize(txtDetails).height));
