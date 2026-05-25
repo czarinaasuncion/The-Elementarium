@@ -1,19 +1,22 @@
 package TheElementarium.elementApp;
 
+//na explain ko na imports sa DetailPanel.java
 import TheElementarium.elements.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 
-public class ElementGUI extends JFrame {
+
+public class ElementGUI extends JFrame { //eto main application window
+    //color palette ng app natin, static final para constant and di magbago since eto lang naman colors na gagamitin all throughout
     public static final Color REGAL_NAVY = new Color(13, 59, 102);
     public static final Color LEMON_CHIFFON = new Color(250, 240, 202);
     public static final Color DARK_BLUE = REGAL_NAVY;
     public static final Color HEADER_LINE = LEMON_CHIFFON;
     public static final Color DEFAULT_PASTEL = LEMON_CHIFFON;
 
-    public final Elementarium logic = new Elementarium();
+    public final Elementarium logic = new Elementarium(); //logic variable - kukunin ng ElementGUI yung backend data/logic na nasa Elementarium.java
     private final List<JButton> elementButtons = new ArrayList<>();
     private final CardLayout cardLayout;
     private final JPanel mainContainer;
