@@ -36,7 +36,7 @@ public class DetailPanel extends JPanel { //may word na extends to indicate na m
 
         lblImage = new JLabel() { //subclass of JLabel, instead na icon/image lang ihohold niya, may sarili siyang logic
             @Override //override when the component needs to rendered (for example, if nagresize yung window etc.)
-            protected void paintComponent(Graphics g) { //nag override siya from java.swing.*, specifically java.swing.*
+            protected void paintComponent(Graphics g) { //nag override siya from java.swing.*
                 // protected since yung mga classes ng package na to gagamit din ng paintComponent()
                 //matik na icacall to
                 super.paintComponent(g); //dito nagpeperform yung Java ng standard clean up (like clearing the bg) bago mag execute/draw yung custom code mo
