@@ -17,7 +17,7 @@ public class ElementGUI extends JFrame { //eto main application window
     public static final Color DEFAULT_PASTEL = LEMON_CHIFFON;
 
     public final Elementarium logic = new Elementarium(); //logic variable - kukunin ng ElementGUI yung backend data/logic na nasa Elementarium.java
-    private final List<JButton> elementButtons = new ArrayList<>();
+    private final List<JButton> elementButtons = new ArrayList<>(); 
     private final CardLayout cardLayout;
     private final JPanel mainContainer;
     private HeaderPanel headerPanel;
@@ -26,14 +26,15 @@ public class ElementGUI extends JFrame { //eto main application window
     private final ElementLab elementLabPanel;
 
     public ElementGUI() {
-        logic.initializeSystem();
-        setupFrame();
-        cardLayout = new CardLayout();
-        mainContainer = new JPanel(cardLayout);
+        logic.initializeSystem(); //iloload yung elements pati system data eme
+        setupFrame(); //eto yung main window, iniitialize niya window settings
+        cardLayout = new CardLayout(); //container eto ng mga panels na gagamitin, carldlayout since para siyang deck of cards and yung cards niya menuPanel, periodictable panel etc.Aadd mo tong mga components sa cardLayout container.
+        mainContainer = new JPanel(cardLayout); //aassign/aadd as main container yung cardLayout
 
+        //dito mabubuo yung main menu
         MainMenuPanel menuPanel = new MainMenuPanel(
-            e -> switchToFullScreen("PeriodicTable"),
-            e -> switchToFullScreen("StudyChem"));
+            e -> switchToFullScreen("PeriodicTable"), // yung e na may arrow, action listeners tawag sa kanila, sa action listener na to, magswiswitch to full screen yung main menu kapag lilipat na nung periodic table
+            e -> switchToFullScreen("StudyChem")); //same lang din eto dun sa nauna, ang kaibahan lang is yung lilitaw naman dito na fullscreen is yung elementLab reaction predictor
 
         elementLabPanel = new ElementLab(e -> switchToMenuScreen(), e -> switchToFullScreen("PeriodicTable"));
         periodicTableScreen = createPeriodicTableScreen();
